@@ -1,7 +1,7 @@
 {
-  "name": "mrstudio",
+  "name": "social-media",
   "version": "1.0.0",
-  "description": "clone https://dribbble.com/shots/16147988-Hotel-Resort-booking-landing-page",
+  "description": "clone https://dribbble.com/shots/16140039-Social-media-website",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

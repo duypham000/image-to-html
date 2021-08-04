@@ -1,85 +1,144 @@
 extends layout/layout
 
 block vars
-	-title = 'Home'
+	-title = 'Social Media'
 	-bodyClass = 'home-page'
 
-mixin card(name, img, price, id, link, location)
-	a(href=link).cardctn
-		.card__image 
-			img(src=link, alt=name)
-		.card__title=name 
-		.card__detail
-			.card__detail-info 
-				.card__detail-info-price=price 
-				.card__detail-info-id Booking ID: 
-					span=id 
-				.card__detail-info-location=location
-			.card__detail-logo
-				i.fab.fa-500px
+mixin group(title,typebtn,link)
+	.container.grpCtn
+		h3.title= title
+		.list 
+			block
+		if typebtn == "showmore"
+			a(href=link).btnc.btnc--cir Show more
+		if typebtn == "check"
+			.chose 
+				.btnc.btnc--cir.accpt
+					i.fas.fa-check
+				.btnc.btnc--cir.dennd
+					i.fas.fa-times
+mixin item(href,img, name, desc, type, time)
+	a(href=href).container.itmCtn 
+		.avt 
+			img(src=img, alt="alt")
+		.detail 
+			h3= name 
+			p= desc
+		if type == "active"
+			if time 
+				.active=time
+			else 
+				.active.now
+		if type == "arrow"
+			.arr
+				i.fas.fa-chevron-right
+		if type == "menu" 
+			.menu
+				i.fas.fa-ellipsis-v
+mixin setting-item(name, type)
+	a(href="#").container.sttctn 
+		h3=name
+		if type == "arrow"
+			.arr 
+				i.fas.fa-chevron-right
+		if type =="check"
+			.checkbox
+		
 block container
-	header.navbar 
-		a(href="#").logo Dstudio 
-		ul.navbar__menu 
-			a(href="#").navbar__menu-item Home 
-			a(href="#").navbar__menu-item About 
-			a(href="#").navbar__menu-item Type of house 
-			a(href="#").navbar__menu-item Contact 
-			a(href="#").navbar__menu-item
-				.btnc.btnc--rounded Login 
-	section.banner
-		.banner__slide 
-			h1.banner__slide-title Enjoy Your Dream Vacation 
-			p.banner__slide-desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quod nobis iste?
-			a(href="#").banner__slide-link 
-				i.fab.fa-500px
-				span Warwick Hotels & Resorts 
-			.banner__slide-image 
-				img(src="/images/sld.jpg", alt="Warwich Hotels & Resorts")
-			.cover
-		.banner__feature 
-			.banner__feature-facilities 
-				h3.banner__feature-facilities-title Facilities
-					a(href="#") See More
-				ul.banner__feature-facilities-list
-					li.banner__feature-facilities-list--item 
-						i.fas.fa-swimming-pool
-						span Swimming 
-					li.banner__feature-facilities-list--item 
-						i.fas.fa-wifi
-						span Wi-fi 
-					li.banner__feature-facilities-list--item 
-						i.fas.fa-fan
-						span AC 
-					li.banner__feature-facilities-list--item 
-						i.fas.fa-hamburger
-						span Dinner
-			.banner__feature-foryou 
-				h3.banner__feature-foryou-title Hotels For You 
-				p.banner__feature-foryou-desc 5 Days 6 Nights 
-				a(href="#").banner__feature-foryou-price 
-					i.fas.fa-check-circle
-					span USD $696.69
-			.banner__feature-views 
-				.banner__feature-views-search 
-					.banner__feature-views-search--res 150 Results 
-					.banner__feature-views-search--tool 
-						i.fas.fa-pen
-						i.fas.fa-search
-				ul.banner__feature-views-list 
-					a(href="#").image 
-						img(src="/images/views.jpg", alt="")
-					a(href="#").image 
-						img(src="/images/views.jpg", alt="")
-					a(href="#").image 
-						img(src="/images/views.jpg", alt="")
-					a(href="#").image 
-						img(src="/images/views.jpg", alt="")
-					a(href="#").image 
-						img(src="/images/views.jpg", alt="")
-	section.choice 
-		h2.choice__title Entire city of choice 
-		ul.choice__list 
-			+card("Diu resort", "#", "$69.96", "000001", "/images/sld.jpg", "Diu group")
-			+card("Diu hotel", "#", "$69.96", "000002", "/images/sld.jpg", "Diu group")
-			+card("Diu shop", "#", "$69.96", "000006", "/images/sld.jpg", "Diu group")
+	.mainCtn 
+		header.navbar 
+			.navbar__search
+				form(action="" method="method")
+					.input-group
+						input.form-control(type="text", placeholder="Search...", aria-label="Search...", aria-describedby="search")
+						button.btn#search(type="summit") 					
+							i.fas.fa-search
+			.navbar__menu
+				a(href="#").navbar__menu-item.active
+					i.fas.fa-archway
+				a(href="#").navbar__menu-item
+					i.fab.fa-artstation
+				a(href="#").navbar__menu-item
+					i.fab.fa-apple
+				a(href="#").navbar__menu-item
+					i.fas.fa-apple-alt
+				a(href="#").navbar__menu-item
+					i.fas.fa-atlas
+		section.newsFeed
+			.newsFeed__updateActivity 
+				h2.newsFeed__updateActivity-title Update your activity
+				.newsFeed__updateActivity-status 
+					.form-floating
+						textarea.form-control(placeholder="How about your feelings, Diu?")
+				.newsFeed__updateActivity-option
+					a(href="#").item Photos/videos
+						i.far.fa-image
+					a(href="#").item Live Streaming
+						i.far.fa-video
+			.newsFeed__forYou
+				h2.newsFeed__forYou-title For you
+				.newsFeed__forYou-list 
+					.newsFeed__forYou-list--item 
+						.newsFeed__forYou-list--item_menu
+							.avt
+								img(src="/images/avt.jpg", alt="alt")
+							.detail 
+								.detail__name Diu Gaming
+								.detail__desc Dev 
+									span 
+									a(href="#") Ads
+							.btnc.btnc--cir 
+								i.fas.fa-plus
+								p Subscribe
+							.menu 
+								i.fas.fa-ellipsis-v
+						.newsFeed__forYou-list--item_main 
+							img(src="/images/streamScr.jpg", alt="alt")
+						.newsFeed__forYou-list--item_react 
+							.btnc.btnc--cir 
+								i.fas.fa-heart
+								span 789
+								p Like
+							.btnc.btnc--cir
+								i.fas.fa-comment-alt
+								span 456
+								p Comment
+							.btnc.btnc--cir
+								i.fas.fa-share-alt
+								span 123 
+								p Share
+	section.sideBar.sideBar-left 
+		.sideBar-left__friends 
+			+group("Friends", "showmore", "#")
+				+item("#", "/images/avt.jpg", "Diu", "@diu", "active")
+				+item("#", "/images/avt.jpg", "Khanh", "@khanh", "active")
+				+item("#", "/images/avt.jpg", "Duyn", "@duyn", "active", "5m")
+				+item("#", "/images/avt.jpg", "Pham", "@pham", "active", "15m")
+		.sideBar-left__group
+			+group("Group", "showmore", "#")
+				+item("#", "/images/full.jpg", "Full snack overflow", "we are the best", "arrow")
+				+item("#", "/images/nasa.jpg", "Html hack nasa", "ưhatsup!", "arrow")
+	section.sideBar.sideBar-right
+		.sideBar-right__account
+			+group()
+				.btnc 
+					i.fal.fa-bell
+				.btnc 
+					i.far.fa-comment
+				.btnc 
+					i.far.fa-bookmark
+				.btnc 	
+					.avt 	
+						img(src="/images/avt.jpg", alt="alt")
+		.sideBar-right__friendReq
+			+group("Friend Request", "check")
+				+item("#", "/images/FBI.jpg", "FBI", "1 Mutual friends", "menu")
+			a(href="#").btnc.sideBar-right__friendReq-showmore Show more
+		.sideBar-right__setting
+			+group("Settings")
+				+setting-item("Account setting", "arrow")
+				+setting-item("Account setting", "arrow")
+				+setting-item("Account setting", "arrow")
+				+setting-item("Account setting", "arrow")
+				+setting-item("Account setting", "arrow")
+				a.btnc.btnc-cir Sign out
