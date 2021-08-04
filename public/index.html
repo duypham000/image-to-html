@@ -2,173 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Social Media</title>
+    <title>Demio</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
     <link rel="icon" href="favicon-16x16.png" type="image/x-icon" sizes="16x16">
     <link rel="stylesheet" href="styles/reset.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" href="styles/fontawesome.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body class="home-page">
     <div class="wrapper">
-      <div class="mainCtn"> 
-        <header class="navbar"> 
-          <div class="navbar__search">
-            <form action="" method="method">
-              <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search..." aria-label="Search..." aria-describedby="search">
-                <button class="btn" id="search" type="summit">					<i class="fas fa-search"></i></button>
-              </div>
-            </form>
-          </div>
-          <div class="navbar__menu"><a class="navbar__menu-item active" href="#"><i class="fas fa-archway"></i></a><a class="navbar__menu-item" href="#"><i class="fab fa-artstation"></i></a><a class="navbar__menu-item" href="#"><i class="fab fa-apple"></i></a><a class="navbar__menu-item" href="#"><i class="fas fa-apple-alt"></i></a><a class="navbar__menu-item" href="#"><i class="fas fa-atlas"></i></a></div>
-        </header>
-        <section class="newsFeed">
-          <div class="newsFeed__updateActivity"> 
-            <h2 class="newsFeed__updateActivity-title">Update your activity</h2>
-            <div class="newsFeed__updateActivity-status"> 
-              <div class="form-floating">
-                <textarea class="form-control" placeholder="How about your feelings, Diu?"></textarea>
-              </div>
-            </div>
-            <div class="newsFeed__updateActivity-option"><a class="item" href="#">Photos/videos<i class="far fa-image"></i></a><a class="item" href="#">Live Streaming<i class="far fa-video"></i></a></div>
-          </div>
-          <div class="newsFeed__forYou">
-            <h2 class="newsFeed__forYou-title">For you</h2>
-            <div class="newsFeed__forYou-list"> 
-              <div class="newsFeed__forYou-list--item"> 
-                <div class="newsFeed__forYou-list--item_menu">
-                  <div class="avt"><img src="/images/avt.jpg" alt="alt"></div>
-                  <div class="detail"> 
-                    <div class="detail__name">Diu Gaming</div>
-                    <div class="detail__desc">Dev <span> </span><a href="#">Ads</a></div>
-                  </div>
-                  <div class="btnc btnc--cir"> <i class="fas fa-plus"></i>
-                    <p>Subscribe</p>
-                  </div>
-                  <div class="menu"> <i class="fas fa-ellipsis-v"></i></div>
-                </div>
-                <div class="newsFeed__forYou-list--item_main"> <img src="/images/streamScr.jpg" alt="alt"></div>
-                <div class="newsFeed__forYou-list--item_react"> 
-                  <div class="btnc btnc--cir"> <i class="fas fa-heart"></i><span>789</span>
-                    <p>Like</p>
-                  </div>
-                  <div class="btnc btnc--cir"><i class="fas fa-comment-alt"></i><span>456</span>
-                    <p>Comment</p>
-                  </div>
-                  <div class="btnc btnc--cir"><i class="fas fa-share-alt"></i><span>123 </span>
-                    <p>Share</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <section class="sideBar sideBar-left"> 
-        <div class="sideBar-left__friends"> 
-          <div class="container grpCtn">
-            <h3 class="title">Friends</h3>
-            <div class="list"> <a class="container itmCtn" href="#"> 
-                <div class="avt"> <img src="/images/avt.jpg" alt="alt"/></div>
-                <div class="detail"> 
-                  <h3>Diu</h3>
-                  <p>@diu</p>
-                </div>
-                <div class="active now"></div></a><a class="container itmCtn" href="#"> 
-                <div class="avt"> <img src="/images/avt.jpg" alt="alt"/></div>
-                <div class="detail"> 
-                  <h3>Khanh</h3>
-                  <p>@khanh</p>
-                </div>
-                <div class="active now"></div></a><a class="container itmCtn" href="#"> 
-                <div class="avt"> <img src="/images/avt.jpg" alt="alt"/></div>
-                <div class="detail"> 
-                  <h3>Duyn</h3>
-                  <p>@duyn</p>
-                </div>
-                <div class="active">5m</div></a><a class="container itmCtn" href="#"> 
-                <div class="avt"> <img src="/images/avt.jpg" alt="alt"/></div>
-                <div class="detail"> 
-                  <h3>Pham</h3>
-                  <p>@pham</p>
-                </div>
-                <div class="active">15m</div></a>
-            </div><a class="btnc btnc--cir" href="#">Show more</a>
-          </div>
+      <header class="navbar">
+        <div class="container"> <a class="logo">demio <i class="fab fa-adn"></i></a>
+          <ul class="navbar__menu"> <a class="navbar__menu-item" href="#">Why Demio?<i class="fas fa-chevron-down"></i></a><a class="navbar__menu-item" href="#">Solutions</a><a class="navbar__menu-item" href="#">Customers</a><a class="navbar__menu-item" href="#">Pricing </a><a class="navbar__menu-item" href="#">Recources<i class="fas fa-chevron-down"></i></a></ul>
+          <div class="navbar__enter"><a class="btnc" href="#">Login</a><a class="btnc btnc-rounded btnc-cir" href="#">Get started free</a></div>
         </div>
-        <div class="sideBar-left__group">
-          <div class="container grpCtn">
-            <h3 class="title">Group</h3>
-            <div class="list"> <a class="container itmCtn" href="#"> 
-                <div class="avt"> <img src="/images/full.jpg" alt="alt"/></div>
-                <div class="detail"> 
-                  <h3>Full snack overflow</h3>
-                  <p>we are the best</p>
-                </div>
-                <div class="arr"><i class="fas fa-chevron-right"></i></div></a><a class="container itmCtn" href="#"> 
-                <div class="avt"> <img src="/images/nasa.jpg" alt="alt"/></div>
-                <div class="detail"> 
-                  <h3>Html hack nasa</h3>
-                  <p>ưhatsup!</p>
-                </div>
-                <div class="arr"><i class="fas fa-chevron-right"></i></div></a>
-            </div><a class="btnc btnc--cir" href="#">Show more</a>
+      </header>
+      <section class="banner">
+        <div class="container">
+          <h1 class="banner__title">Flexible pricing plans for <span>any business</span></h1>
+          <h3 class="banner__desc">Select a plan below or start a 14-day free trial to see all that Demio can do for you.</h3>
+          <div class="banner__saver btnc btnc-rounded btnc-cir">
+            <div class="banner__saver-normal btnc">Monthly</div>
+            <div class="banner__saver-annual btnc btnc-cir btnc-filled">Annual  <span>Save 30%</span></div>
           </div>
         </div>
       </section>
-      <section class="sideBar sideBar-right">
-        <div class="sideBar-right__account">
-          <div class="container grpCtn">
-            <h3 class="title"></h3>
-            <div class="list"> 
-              <div class="btnc"> <i class="fal fa-bell"></i></div>
-              <div class="btnc"> <i class="far fa-comment"></i></div>
-              <div class="btnc"> <i class="far fa-bookmark"></i></div>
-              <div class="btnc">	
-                <div class="avt">	<img src="/images/avt.jpg" alt="alt"></div>
+      <section class="plan">
+        <div class="container">
+          <ul class="plan__list"> 
+            <li class="plan__list-item">
+              <div class="plan__list-item--detail"> 
+                <h3 class="title">STARTER</h3>
+                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.</p>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="sideBar-right__friendReq">
-          <div class="container grpCtn">
-            <h3 class="title">Friend Request</h3>
-            <div class="list"> <a class="container itmCtn" href="#"> 
-                <div class="avt"> <img src="/images/FBI.jpg" alt="alt"/></div>
-                <div class="detail"> 
-                  <h3>FBI</h3>
-                  <p>1 Mutual friends</p>
-                </div>
-                <div class="menu"><i class="fas fa-ellipsis-v"></i></div></a>
-            </div>
-            <div class="chose"> 
-              <div class="btnc btnc--cir accpt"><i class="fas fa-check"></i></div>
-              <div class="btnc btnc--cir dennd"><i class="fas fa-times"></i></div>
-            </div>
-          </div><a class="btnc sideBar-right__friendReq-showmore" href="#">Show more</a>
-        </div>
-        <div class="sideBar-right__setting">
-          <div class="container grpCtn">
-            <h3 class="title">Settings</h3>
-            <div class="list"> <a class="container sttctn" href="#"> 
-                <h3>Account setting</h3>
-                <div class="arr"> <i class="fas fa-chevron-right"></i></div></a><a class="container sttctn" href="#"> 
-                <h3>Account setting</h3>
-                <div class="arr"> <i class="fas fa-chevron-right"></i></div></a><a class="container sttctn" href="#"> 
-                <h3>Account setting</h3>
-                <div class="arr"> <i class="fas fa-chevron-right"></i></div></a><a class="container sttctn" href="#"> 
-                <h3>Account setting</h3>
-                <div class="arr"> <i class="fas fa-chevron-right"></i></div></a><a class="container sttctn" href="#"> 
-                <h3>Account setting</h3>
-                <div class="arr"> <i class="fas fa-chevron-right"></i></div></a><a class="btnc btnc-cir">Sign out</a>
-            </div>
-          </div>
+              <div class="plan__list-item--prices"> 
+                <div class="price">$34/mo</div>
+                <div class="detail">Paid Annually  </div>
+              </div>
+              <div class="plan__list-item--attendee">50 Attendee Room</div><a class="btnc btnc-cir plan__list-item--get" href="#">Get this plan</a>
+            </li>
+            <li class="plan__list-item">
+              <div class="plan__list-item--detail"> 
+                <h3 class="title">GROWTH</h3>
+                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.</p>
+              </div>
+              <div class="plan__list-item--prices"> 
+                <div class="price">$69/mo</div>
+                <div class="detail">Paid Annually  </div>
+              </div>
+              <div class="plan__list-item--attendee">150 Attendee Room</div><a class="btnc btnc-cir plan__list-item--get" href="#">Get this plan</a>
+            </li>
+            <li class="plan__list-item">
+              <div class="plan__list-item--detail"> 
+                <h3 class="title">BUSINESS</h3>
+                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.</p>
+              </div>
+              <div class="plan__list-item--prices"> 
+                <div class="price">$163/mo</div>
+                <div class="detail">Paid Annually  </div>
+              </div>
+              <div class="plan__list-item--attendee">500 Attendee Room</div><a class="btnc btnc-cir plan__list-item--get" href="#">Get this plan</a>
+            </li>
+            <li class="plan__list-item">
+              <div class="plan__list-item--detail"> 
+                <h3 class="title">ENTERPRISE</h3>
+                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.</p>
+              </div>
+              <div class="plan__list-item--prices"> 
+                <div class="price">Let's talk!</div>
+                <div class="detail">Paid Annually  </div>
+              </div>
+              <div class="plan__list-item--attendee">1000+ Attendee Room</div><a class="btnc btnc-cir plan__list-item--get" href="#">Contact us</a>
+            </li>
+          </ul>
         </div>
       </section>
     </div>

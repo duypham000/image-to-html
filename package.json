@@ -1,7 +1,7 @@
 {
-  "name": "social-media",
+  "name": "demio",
   "version": "1.0.0",
-  "description": "clone https://dribbble.com/shots/16140039-Social-media-website",
+  "description": "clone https://dribbble.com/shots/16129266-Demio-Pricing-Page",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
