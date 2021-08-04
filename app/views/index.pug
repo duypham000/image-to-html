@@ -1,60 +1,63 @@
 extends layout/layout
 
 block vars
-	-title = 'Home'
+	-title = 'The Great Sea'
 	-bodyClass = 'home-page'
 
-mixin card(link, title, desc, teacher, learner, star, img, type, date)
-	a(href=link).cardctn
-		.card__image
-			img(src=img, alt="alt")
-		.card__detail 
-			.card__detail-type
-				i.fas.fa-chart-bar
-				span=type
-			.card__detail-title=title
-			.card__detail-desc=desc 
-			.card__detail-rate
-				.card__detail-rate-learner=learner   
-					span learners 
-				.card__detail-rate-star
-					i.far.fa-star
-					span=star 
-			.card__detail-class 
-				.card__detail-class-teacher=teacher 
-				.card__detail-class-date=date
-
 block container
-	header.navbar 
-		.navbar__search
-			form(action="#").input-group.mb-3
-				.input-group-append
-					button.btn(type="submit") 
-						i.fas.fa-search
-				input.form-control(type="text", placeholder="What do you want to learn", aria-label="What do you want to learn", aria-describedby="search")
-		a(href="/").logo Learn.
-		.navbar__menu 
-			a(href="#").navbar__menu-item Browse 
-				i.fas.fa-chevron-down
-			a(href="#").navbar__menu-item Sign in
-			a(href="#").btnc Join For Free
-	section.banner 
-		.banner__text 
-			.banner__text-title World-class learning for anyone, anywhere 
-			.banner__text-desc Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum explicabo maiores, est tenetur facere nam odio ratione tempore velit suscipit.
-			a(href="#").btnc Get Started
-		.banner__image 
-			img(src="/images/banner.png", alt="alt")
-	section.courses 
-		.courses__title Explore your program from 123,000 online courses
-		ul.courses__categories
-			li.courses__categories-item.checked All Categories
-			li.courses__categories-item Programming & Tech
-			li.courses__categories-item Lifestyle
-			li.courses__categories-item Business
-			li.courses__categories-item Design 
-		.courses__list 
-			card(link, title, desc, teacher, learner, star, img, type, date)
-			+card("#", "How to hack nasa with programming language HTML!", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam repellat sed, rem sint deleniti architecto, deserunt, esse enim temporibus nobis illum. Officiis eius possimus, vel ratione cupiditate eveniet maiores laborum!","Diu", "156,000", "4.9", "/images/html.jpg", "hell", "Jul 32, 2069" )
-			+card("#", "Full snack overflow in 3 months", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam repellat sed, rem sint deleniti architecto, deserunt, esse enim temporibus nobis illum. Officiis eius possimus, vel ratione cupiditate eveniet maiores laborum!","Khanh", "600,000", "4.9", "/images/fnd.jpg", "hell", "August 5, 2002" )
+	.container
+		section.login  
+			.container
+				a.login__logo(href="#")
+					i(class="fas fa-book-open")
+					p.login__logo-text The Great Sea
+				.login__detail
+					h1 Login
+					h3 Leave your salling footprints
+					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolor fuga ut molestias eos ratione molestiae dignissimos nihil perspiciatis rem.
+				.login__form
+					form(action='#' method='method')
+						.form-group.login__form-group
+							label(for='email') Username
+							input.form-control(type='email', name='email' placeholder='duypham05082002@gmail.com' autofocus=true)
+						.form-group.login__form-group
+							label(for='password') Password
+							input.form-control(type='password', name='{:password}', placeholder='Password')
+						.login__form-option
+							.form-check.login__form-option_check
+								input.form-check-input#remember(type="checkbox")
+								label.form-check-label(for="remember") Remember me
+							a(href="#") Forget password?
+						button.btn.btn-primary(type='submit') Login
+				.login__create_account
+					p.login__create_account-text Don't have a account yet?
+					a(href="#") Join The Great Sea 
+			.overlay
 			
+		section.slideShow
+			.container
+				ul.slideShow__list 
+					li.slideShow__list-item
+						.slideShow__list-item-image 
+							img(src="/images/sld1.jpg", alt="alt")
+						.slideShow__list-item-text 
+							h2 Guizhong and Zhongli
+							p Lorem ipsum dolor sit amet consectetur adipisicing.
+					li.slideShow__list-item
+						.slideShow__list-item-image 
+							img(src="/images/sld2.jpg", alt="alt")
+						.slideShow__list-item-text 
+							h2 Ganyu
+							p Lorem ipsum dolor sit amet consectetur adipisicing.
+					li.slideShow__list-item
+						.slideShow__list-item-image 
+							img(src="/images/sld3.jpg", alt="alt")
+						.slideShow__list-item-text 
+							h2 Amber
+							p Lorem ipsum dolor sit amet consectetur adipisicing.
+				ul.slideShow__list-navigation 
+					li.dot(dot="1")
+					li.dot(dot="2")
+					li.dot(dot="3")
+					li.dot(dot="4")
+					li.panel

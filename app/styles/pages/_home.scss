@@ -1,208 +1,229 @@
-$green: #158b75;
-$gray: #959598;
-
-.card {
-  &ctn {
-    background: $green;
-    border-radius: 1rem;
-    padding: 2.5rem;
-    max-width: 68rem;
-    max-height: 32rem;
-    display: flex;
-    flex-direction: row;
-  }
-  &__image {
-    height: 27rem;
-    width: 27rem;
-    border-radius: 1rem;
+@mixin flex(
+  $wrap: nowrap,
+  $dir: row,
+  $align: flex-start,
+  $justify: flex-start
+) {
+  display: flex;
+  flex-wrap: $wrap;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+.wrapper {
+  .container {
+    max-width: 1440px;
+    width: 1440px;
+    padding: 0;
+    @include flex();
     overflow: hidden;
-    margin-right: 2rem;
-    img {
-      width: 100%;
-      height: 100%;
+  }
+}
+
+.login {
+  width: 57rem;
+  background-color: transparent;
+  height: 100%;
+  z-index: 50;
+  .container {
+    max-width: 36rem;
+    @include flex(nowrap, column);
+  }
+  &__logo:hover {
+    text-decoration: none;
+    color: black;
+  }
+  &__logo {
+    @include flex(nowrap, row, center, center);
+    margin-top: 7rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    &-text {
+      width: fit-content;
+      margin-bottom: 0;
     }
   }
   &__detail {
-    color: white;
-    max-width: 50%;
-    &-type {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      i {
-        margin-right: 1rem;
-      }
+    margin-top: 10rem;
+    h1 {
+      font-weight: bold;
+      margin-bottom: 4rem;
     }
-    &-title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    &-desc {
+    h3 {
       font-size: 1.2rem;
+      color: #656b7c;
+      font-weight: bold;
       margin-bottom: 2rem;
     }
-    &-rate {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-      justify-content: center;
-      &-learner {
-        margin-right: 2rem;
+    p {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #aeb8c3;
+    }
+  }
+  &__form {
+    width: 100%;
+    margin-top: 7rem;
+    font-size: 1.2rem;
+    font-weight: 780;
+    form {
+      width: 100%;
+      button {
+        width: 100%;
+        border-radius: 3rem;
+        padding: 1.5rem;
+        font-size: 1.2rem;
+        font-weight: 800;
       }
     }
-    &-class {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      margin-top: auto;
-      font-size: 1.5rem;
+    &-group {
+      padding-bottom: 2rem;
+      input {
+        border-radius: 3rem;
+        padding: 2rem;
+        font-size: 1.2rem;
+      }
     }
+    &-option {
+      @include flex(nowrap, row, center, space-between);
+      margin-bottom: 3rem;
+      &_check {
+        label {
+          margin-left: 1rem;
+          font-size: 1.2;
+          font-weight: 780;
+        }
+      }
+      a {
+        font-size: 1.2rem;
+        font-weight: 780;
+      }
+    }
+  }
+  &__create_account {
+    margin-top: 11rem;
+    @include flex();
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 780;
+    p {
+      color: #aeb8c3;
+    }
+    a {
+      margin-left: 0.5rem;
+    }
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -100%;
+    background-color: white;
+    opacity: 0.9;
+    z-index: -1;
   }
 }
 
-.wrapper {
-  max-width: 1440px;
-  margin: auto;
-  padding: 0;
-}
-
-.btnc {
-  padding: 1rem 2rem 1rem 2rem;
-  background-color: $green;
-  border-radius: 1rem;
-  color: white;
-}
-
-.navbar {
-  margin: 0;
-  padding: 0;
-  margin-top: 4rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 5rem;
-  &__search {
-    margin: 0;
-    padding: 0;
-    width: 34rem;
-    .input-group {
-      &-append {
-        border-radius: 1rem 0 0 1rem;
-        overflow: hidden;
+.slideShow {
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  &__list {
+    @include flex();
+    height: 100%;
+    width: 432rem;
+    animation: 1s slide1 forwards;
+    &-item {
+      width: 144rem;
+      height: 100%;
+      position: relative;
+      &-image {
+        width: 144rem;
+        height: 100%;
+        position: absolute;
+        z-index: -12;
+        img {
+          width: 100%;
+          height: 100%;
+        }
       }
-      button {
-        width: 100%;
-        background: $green;
+      &-text {
+        width: 87rem;
+        height: 100%;
+        margin-left: 57rem;
+        @include flex(nowrap, column, center, flex-start);
+        line-height: 1.5;
         color: white;
-        font-size: 2rem;
-      }
-      input {
-        border: none;
-        background: #e8f4f2;
-        border-radius: 0 1rem 1rem 0;
-        height: 5rem;
-        font-size: 1.5rem;
-        &:focus {
-          background: #e8f4f2;
-          box-shadow: none;
-          border: none;
+
+        h2 {
+          margin-top: 64rem;
+          font-size: 3rem;
+          font-weight: 750;
+        }
+        p {
+          margin-top: 3rem;
+          font-size: 1.2rem;
+          font-weight: 650;
         }
       }
     }
-  }
-  .logo {
-    font-size: 3rem;
-    font-weight: 800;
-    color: $green;
-  }
-  &__menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 45rem;
-    font-size: 2rem;
-    font-weight: 600;
-    &-item {
-      i {
-        margin-left: 0.5rem;
-      }
-    }
-  }
-}
-.banner {
-  margin-bottom: 9rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  &__text {
-    max-width: 77rem;
-    &-title {
-      font-size: 7rem;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 4.5rem;
-    }
-    &-desc {
-      font-size: 2rem;
-      font-weight: 600;
-      color: $gray;
-      margin-bottom: 4.5rem;
-    }
-    .btnc {
-      padding-left: 7.5rem;
-      padding-right: 7.5rem;
-      width: fit-content;
+    &-navigation {
+      position: absolute;
+      top: 80rem;
+      width: 87rem;
+      height: 0.8rem;
+      left: 57rem;
       color: white;
-      font-size: 2rem;
-      font-weight: 800;
-    }
-  }
-  &__image {
-    max-height: 100%;
-    overflow: hidden;
-    img {
-      height: 100%;
+      @include flex(nowrap, row, center, center);
+      .dot {
+        height: 0.8rem;
+        width: 0.8rem;
+        border-radius: 50%;
+        background-color: currentColor;
+        margin: 0 0.25rem 0 0.25rem;
+        cursor: pointer;
+      }
+      .panel {
+        height: 0.8rem;
+        width: 2rem;
+        position: absolute;
+        background-color: currentColor;
+        border-radius: 0.4rem;
+        animation: 1s panel1 forwards;
+      }
     }
   }
 }
-.courses {
-  &__title {
-    max-width: 50rem;
-    font-size: 4rem;
-    font-weight: 600;
-    margin: auto;
-    text-align: center;
-    margin-bottom: 6rem;
+@keyframes slide1 {
+  to {
+    transform: translate(0, 0);
   }
-  &__categories {
-    display: flex;
-    flex-direction: row;
-    font-size: 2.5rem;
-    font-weight: 700;
-    align-items: center;
-    justify-content: space-between;
-    color: $gray;
-    cursor: pointer;
-    &-item {
-      padding-bottom: 2rem;
-      &:hover {
-        border-bottom: 5px solid $green;
-      }
-    }
-    .checked {
-      border-bottom: 5px solid $green;
-      color: $green;
-    }
+}
+@keyframes slide2 {
+  to {
+    transform: translate(-144rem, 0);
   }
-  &__list {
-    margin-top: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+@keyframes slide3 {
+  to {
+    transform: translate(-288rem, 0);
+  }
+}
+
+@keyframes panel1 {
+  to {
+    transform: translate(-1.2rem, 0);
+  }
+}
+@keyframes panel2 {
+  to {
+    transform: translate(0, 0);
+  }
+}
+@keyframes panel3 {
+  to {
+    transform: translate(1.2rem, 0);
   }
 }

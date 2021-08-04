@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Home</title>
+    <title>The Great Sea</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="robots" content="index, follow">
@@ -16,65 +16,75 @@
   </head>
   <body class="home-page">
     <div class="wrapper">
-      <header class="navbar"> 
-        <div class="navbar__search">
-          <form class="input-group mb-3" action="#">
-            <div class="input-group-append">
-              <button class="btn" type="submit"> <i class="fas fa-search"></i></button>
+      <div class="container">
+        <section class="login"> 
+          <div class="container"><a class="login__logo" href="#"><i class="fas fa-book-open"></i>
+              <p class="login__logo-text">The Great Sea</p></a>
+            <div class="login__detail">
+              <h1>Login</h1>
+              <h3>Leave your salling footprints</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolor fuga ut molestias eos ratione molestiae dignissimos nihil perspiciatis rem.</p>
             </div>
-            <input class="form-control" type="text" placeholder="What do you want to learn" aria-label="What do you want to learn" aria-describedby="search">
-          </form>
-        </div><a class="logo" href="/">Learn.</a>
-        <div class="navbar__menu"> <a class="navbar__menu-item" href="#">Browse <i class="fas fa-chevron-down"></i></a><a class="navbar__menu-item" href="#">Sign in</a><a class="btnc" href="#">Join For Free</a></div>
-      </header>
-      <section class="banner"> 
-        <div class="banner__text"> 
-          <div class="banner__text-title">World-class learning for anyone, anywhere </div>
-          <div class="banner__text-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum explicabo maiores, est tenetur facere nam odio ratione tempore velit suscipit.</div><a class="btnc" href="#">Get Started</a>
-        </div>
-        <div class="banner__image"> <img src="/images/banner.png" alt="alt"></div>
-      </section>
-      <section class="courses"> 
-        <div class="courses__title">Explore your program from 123,000 online courses</div>
-        <ul class="courses__categories">
-          <li class="courses__categories-item checked">All Categories</li>
-          <li class="courses__categories-item">Programming & Tech</li>
-          <li class="courses__categories-item">Lifestyle</li>
-          <li class="courses__categories-item">Business</li>
-          <li class="courses__categories-item">Design </li>
-        </ul>
-        <div class="courses__list"> 
-          <card link title desc teacher learner star img type date></card><a class="cardctn" href="#">
-            <div class="card__image"><img src="/images/html.jpg" alt="alt"/></div>
-            <div class="card__detail"> 
-              <div class="card__detail-type"><i class="fas fa-chart-bar"></i><span>hell</span></div>
-              <div class="card__detail-title">How to hack nasa with programming language HTML!</div>
-              <div class="card__detail-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam repellat sed, rem sint deleniti architecto, deserunt, esse enim temporibus nobis illum. Officiis eius possimus, vel ratione cupiditate eveniet maiores laborum!</div>
-              <div class="card__detail-rate">
-                <div class="card__detail-rate-learner">156,000<span>learners </span></div>
-                <div class="card__detail-rate-star"><i class="far fa-star"></i><span>4.9</span></div>
-              </div>
-              <div class="card__detail-class"> 
-                <div class="card__detail-class-teacher">Diu</div>
-                <div class="card__detail-class-date">Jul 32, 2069</div>
-              </div>
-            </div></a><a class="cardctn" href="#">
-            <div class="card__image"><img src="/images/fnd.jpg" alt="alt"/></div>
-            <div class="card__detail"> 
-              <div class="card__detail-type"><i class="fas fa-chart-bar"></i><span>hell</span></div>
-              <div class="card__detail-title">Full snack overflow in 3 months</div>
-              <div class="card__detail-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam repellat sed, rem sint deleniti architecto, deserunt, esse enim temporibus nobis illum. Officiis eius possimus, vel ratione cupiditate eveniet maiores laborum!</div>
-              <div class="card__detail-rate">
-                <div class="card__detail-rate-learner">600,000<span>learners </span></div>
-                <div class="card__detail-rate-star"><i class="far fa-star"></i><span>4.9</span></div>
-              </div>
-              <div class="card__detail-class"> 
-                <div class="card__detail-class-teacher">Khanh</div>
-                <div class="card__detail-class-date">August 5, 2002</div>
-              </div>
-            </div></a>
-        </div>
-      </section>
+            <div class="login__form">
+              <form action="#" method="method">
+                <div class="form-group login__form-group">
+                  <label for="email">Username</label>
+                  <input class="form-control" type="email" name="email" placeholder="duypham05082002@gmail.com" autofocus>
+                </div>
+                <div class="form-group login__form-group">
+                  <label for="password">Password</label>
+                  <input class="form-control" type="password" name="{:password}" placeholder="Password">
+                </div>
+                <div class="login__form-option">
+                  <div class="form-check login__form-option_check">
+                    <input class="form-check-input" id="remember" type="checkbox">
+                    <label class="form-check-label" for="remember">Remember me</label>
+                  </div><a href="#">Forget password?</a>
+                </div>
+                <button class="btn btn-primary" type="submit">Login</button>
+              </form>
+            </div>
+            <div class="login__create_account">
+              <p class="login__create_account-text">Don't have a account yet?</p><a href="#">Join The Great Sea </a>
+            </div>
+          </div>
+          <div class="overlay"></div>
+        </section>
+        <section class="slideShow">
+          <div class="container">
+            <ul class="slideShow__list"> 
+              <li class="slideShow__list-item">
+                <div class="slideShow__list-item-image"> <img src="/images/sld1.jpg" alt="alt"></div>
+                <div class="slideShow__list-item-text"> 
+                  <h2>Guizhong and Zhongli</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </div>
+              </li>
+              <li class="slideShow__list-item">
+                <div class="slideShow__list-item-image"> <img src="/images/sld2.jpg" alt="alt"></div>
+                <div class="slideShow__list-item-text"> 
+                  <h2>Ganyu</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </div>
+              </li>
+              <li class="slideShow__list-item">
+                <div class="slideShow__list-item-image"> <img src="/images/sld3.jpg" alt="alt"></div>
+                <div class="slideShow__list-item-text"> 
+                  <h2>Amber</h2>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                </div>
+              </li>
+            </ul>
+            <ul class="slideShow__list-navigation"> 
+              <li class="dot" dot="1"></li>
+              <li class="dot" dot="2"></li>
+              <li class="dot" dot="3"></li>
+              <li class="dot" dot="4"></li>
+              <li class="panel"></li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

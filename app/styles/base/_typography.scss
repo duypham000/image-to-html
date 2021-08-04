@@ -1,18 +1,21 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 html,
 body,
-.wrapper {
+.wrapper,
+.container {
   width: 100%;
   height: 100%;
 }
 
 html,
 body {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 *,
@@ -23,11 +26,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: currentColor;
-  &:hover {
-    color: currentColor;
-    text-decoration: none;
-  }
 }
 img {
   display: block;
