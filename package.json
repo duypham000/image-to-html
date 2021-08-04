@@ -1,7 +1,7 @@
 {
-  "name": "demio",
+  "name": "class",
   "version": "1.0.0",
-  "description": "clone https://dribbble.com/shots/16129266-Demio-Pricing-Page",
+  "description": "clone https://dribbble.com/shots/16151138-E-Learning-Website-Design",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

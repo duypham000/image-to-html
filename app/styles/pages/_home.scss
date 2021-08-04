@@ -1,228 +1,208 @@
-@mixin flex(
-  $align: flex-start,
-  $justify: flex-start,
-  $wrap: nowrap,
-  $dir: row
-) {
-  display: flex;
-  align-items: $align;
-  justify-content: $justify;
-  flex-wrap: $wrap;
-  flex-direction: $dir;
-}
-$primatyColor: #07bc71;
+$green: #158b75;
+$gray: #959598;
 
-.home-page {
-  max-width: 144rem;
-  overflow-y: hidden;
-  margin: auto;
-}
-.btnc {
-  padding: 1.5rem 2rem 1.5rem 2rem;
-  @include flex(center, center);
-  &-rounded {
-    border: 2px #2b3337 solid;
+.card {
+  &ctn {
+    background: $green;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    max-width: 68rem;
+    max-height: 32rem;
+    display: flex;
+    flex-direction: row;
   }
-  &-cir {
-    border-radius: 3rem;
-  }
-  &-filled {
-    background-color: currentColor;
-  }
-}
-.navbar {
-  z-index: 1;
-
-  .container {
-    width: 137rem;
-    height: 8rem;
-    margin-top: 2rem;
-    @include flex(center);
-  }
-  .logo {
-    font-family: Yaro;
-    font-size: 2rem;
-    font-weight: 550;
-    i {
-      color: $primatyColor;
-      margin-left: -0.5rem;
+  &__image {
+    height: 27rem;
+    width: 27rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-right: 2rem;
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
-
-  &__menu {
-    margin: 0;
-    margin-left: 8rem;
-    @include flex(center, center);
-    font-weight: 800;
-    font-size: 1.5rem;
-    &-item {
-      margin-right: 4rem;
-      color: currentColor;
+  &__detail {
+    color: white;
+    max-width: 50%;
+    &-type {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
       i {
-        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+    &-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    &-desc {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    &-rate {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      justify-content: center;
+      &-learner {
+        margin-right: 2rem;
+      }
+    }
+    &-class {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: auto;
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0;
+}
+
+.btnc {
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: $green;
+  border-radius: 1rem;
+  color: white;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5rem;
+  &__search {
+    margin: 0;
+    padding: 0;
+    width: 34rem;
+    .input-group {
+      &-append {
+        border-radius: 1rem 0 0 1rem;
+        overflow: hidden;
+      }
+      button {
+        width: 100%;
+        background: $green;
+        color: white;
+        font-size: 2rem;
+      }
+      input {
+        border: none;
+        background: #e8f4f2;
+        border-radius: 0 1rem 1rem 0;
+        height: 5rem;
+        font-size: 1.5rem;
+        &:focus {
+          background: #e8f4f2;
+          box-shadow: none;
+          border: none;
+        }
       }
     }
   }
-  &__enter {
-    margin-left: auto;
-    font-size: 1.5rem;
-    font-family: VistolSans-Bold;
-    font-weight: bold;
-    @include flex();
+  .logo {
+    font-size: 3rem;
+    font-weight: 800;
+    color: $green;
   }
-}
-
-.banner {
-  position: relative;
-  background-color: #fff4ef;
-  top: -11.2rem;
-  height: 75rem;
-  .container {
-    position: relative;
-    top: 17.5rem;
-    max-width: 80rem;
-  }
-  &__title {
-    font-size: 6rem;
-    font-family: VistolSans-Bold;
-    max-width: 60rem;
-    margin: auto;
-    color: #2b3337;
-    text-align: center;
-    line-height: 1.4;
-    span {
-      color: #ff773c;
-      background-color: #ffe0d2;
-    }
-  }
-  &__desc {
-    margin-top: 3rem;
-    max-width: 73rem;
-    text-align: center;
-    font-size: 1.6rem;
-    font-family: VistolSans-Bold;
-  }
-  &__saver {
-    width: fit-content;
-    padding: 0.5rem 0.5rem 0.5rem 3rem;
-    margin: auto;
-    margin-top: 4.5rem;
-    &-annual {
-      color: white;
-      background-color: #2b3337;
-      span {
-        color: #15a76b;
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 45rem;
+    font-size: 2rem;
+    font-weight: 600;
+    &-item {
+      i {
         margin-left: 0.5rem;
       }
     }
   }
 }
-
-.plan {
-  margin-top: -29.2rem;
-  z-index: 1;
-  position: relative;
-  &__list {
-    @include flex();
-    max-width: fit-content;
+.banner {
+  margin-bottom: 9rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  &__text {
+    max-width: 77rem;
+    &-title {
+      font-size: 7rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 4.5rem;
+    }
+    &-desc {
+      font-size: 2rem;
+      font-weight: 600;
+      color: $gray;
+      margin-bottom: 4.5rem;
+    }
+    .btnc {
+      padding-left: 7.5rem;
+      padding-right: 7.5rem;
+      width: fit-content;
+      color: white;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+  }
+  &__image {
+    max-height: 100%;
+    overflow: hidden;
+    img {
+      height: 100%;
+    }
+  }
+}
+.courses {
+  &__title {
+    max-width: 50rem;
+    font-size: 4rem;
+    font-weight: 600;
     margin: auto;
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+  &__categories {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5rem;
+    font-weight: 700;
+    align-items: center;
+    justify-content: space-between;
+    color: $gray;
+    cursor: pointer;
     &-item {
-      width: calc(25% - 5rem);
-      margin: 0 2.5rem 0 2.5rem;
-      padding: 2.5rem;
-      @include flex(stretch, center, nowrap, column);
-      box-shadow: 0px 0px 2px -1.1px rgba(0, 0, 0, 1);
-      border-radius: 0.5rem;
-      text-align: center;
-      &--detail {
-        @include flex(stretch, center, nowrap, column);
-        text-align: center;
-        border-radius: 0.8rem;
-        padding: 1.5rem 0 1.5rem 0;
-        margin-bottom: 5rem;
-        .title {
-          font-size: 2rem;
-          font-weight: 800;
-          font-family: VistolSans-Bold;
-        }
-        .desc {
-          font-size: 1rem;
-          font-weight: 800;
-          font-family: VistolSans-Bold;
-          color: #2b3337;
-        }
-      }
-      &--prices {
-        .price {
-          font-size: 3rem;
-          font-family: VistolSans-Bold;
-          font-weight: 800;
-          margin-bottom: 1rem;
-        }
-        .detail {
-          color: #b0b2b4;
-          font-size: 1.2rem;
-          margin-bottom: 3.5rem;
-        }
-      }
-      &--attendee {
-        font-size: 1.5rem;
-        font-weight: 600;
-        padding: 3rem 0 3rem 0;
-        border-top: 1px solid #e7e7e7;
-        border-bottom: 1px solid #e7e7e7;
-      }
-      &--get {
-        margin-top: 4rem;
-        padding: 2rem 0 2rem 0;
-        font-size: 1.7rem;
-        font-family: VistolSans-Bold;
-        font-weight: 800;
-        color: white;
-      }
-
-      &--get:hover {
-        color: white;
+      padding-bottom: 2rem;
+      &:hover {
+        border-bottom: 5px solid $green;
       }
     }
-    &-item:first-child {
-      .plan__list-item--detail {
-        color: #f53da8;
-        background-color: #fde1f1;
-      }
-      a {
-        background-color: #f53da8;
-      }
+    .checked {
+      border-bottom: 5px solid $green;
+      color: $green;
     }
-    &-item:nth-child(2) {
-      .plan__list-item--detail {
-        color: #03bf70;
-        background-color: #d8f5e9;
-      }
-      a {
-        background-color: #03bf70;
-      }
-    }
-    &-item:nth-child(3) {
-      .plan__list-item--detail {
-        color: #2f8ffe;
-        background-color: #deeeff;
-      }
-      a {
-        background-color: #2f8ffe;
-      }
-    }
-    &-item:last-child {
-      .plan__list-item--detail {
-        color: #ffffff;
-        background-color: #2b3337;
-        .desc {
-          color: #ffffff;
-        }
-      }
-      a {
-        background-color: #2b3337;
-      }
-    }
+  }
+  &__list {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

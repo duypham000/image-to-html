@@ -23,39 +23,13 @@ body {
 }
 a {
   text-decoration: none;
-  font-family: VistolSans;
   color: currentColor;
-}
-a:hover {
-  text-decoration: none;
-  color: currentColor;
+  &:hover {
+    color: currentColor;
+    text-decoration: none;
+  }
 }
 img {
   display: block;
   max-width: 100%;
-}
-
-.container {
-  margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-@font-face {
-  font-family: Yaro;
-  src: url("/fonts/YaroRg.woff");
-}
-
-@font-face {
-  font-family: VistolSans;
-  src: url("/fonts/VistolSans-Regular.woff");
-}
-
-@font-face {
-  font-family: VistolSans-Bold;
-  src: url("/fonts/VistolSans-Bold.woff");
-}
-
-body {
-  font-family: VistolSans;
 }

@@ -1,70 +1,60 @@
 extends layout/layout
 
 block vars
-	-title = 'Demio'
+	-title = 'Home'
 	-bodyClass = 'home-page'
 
+mixin card(link, title, desc, teacher, learner, star, img, type, date)
+	a(href=link).cardctn
+		.card__image
+			img(src=img, alt="alt")
+		.card__detail 
+			.card__detail-type
+				i.fas.fa-chart-bar
+				span=type
+			.card__detail-title=title
+			.card__detail-desc=desc 
+			.card__detail-rate
+				.card__detail-rate-learner=learner   
+					span learners 
+				.card__detail-rate-star
+					i.far.fa-star
+					span=star 
+			.card__detail-class 
+				.card__detail-class-teacher=teacher 
+				.card__detail-class-date=date
+
 block container
-	header.navbar
-		.container 
-			a.logo demio 
-				i.fab.fa-adn
-			ul.navbar__menu 
-				a(href="#").navbar__menu-item Why Demio?
-					i.fas.fa-chevron-down
-				a(href="#").navbar__menu-item Solutions
-				a(href="#").navbar__menu-item Customers
-				a(href="#").navbar__menu-item Pricing 
-				a(href="#").navbar__menu-item Recources
-					i.fas.fa-chevron-down
-			.navbar__enter
-				a(href="#").btnc Login
-				a(href="#").btnc.btnc-rounded.btnc-cir Get started free
-	section.banner
-		.container
-			h1.banner__title Flexible pricing plans for 
-				span any business
-			h3.banner__desc Select a plan below or start a 14-day free trial to see all that Demio can do for you.
-			.banner__saver.btnc.btnc-rounded.btnc-cir
-				.banner__saver-normal.btnc Monthly
-				.banner__saver-annual.btnc.btnc-cir.btnc-filled Annual  
-					span Save 30%
-	section.plan
-		.container
-			ul.plan__list 
-				li.plan__list-item
-					.plan__list-item--detail 
-						h3.title STARTER
-						p.desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.
-					.plan__list-item--prices 
-						.price $34/mo
-						.detail Paid Annually  
-					.plan__list-item--attendee 50 Attendee Room
-					a(href="#").btnc.btnc-cir.plan__list-item--get Get this plan
-				li.plan__list-item
-					.plan__list-item--detail 
-						h3.title GROWTH
-						p.desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.
-					.plan__list-item--prices 
-						.price $69/mo
-						.detail Paid Annually  
-					.plan__list-item--attendee 150 Attendee Room
-					a(href="#").btnc.btnc-cir.plan__list-item--get Get this plan
-				li.plan__list-item
-					.plan__list-item--detail 
-						h3.title BUSINESS
-						p.desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.
-					.plan__list-item--prices 
-						.price $163/mo
-						.detail Paid Annually  
-					.plan__list-item--attendee 500 Attendee Room
-					a(href="#").btnc.btnc-cir.plan__list-item--get Get this plan
-				li.plan__list-item
-					.plan__list-item--detail 
-						h3.title ENTERPRISE
-						p.desc Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.
-					.plan__list-item--prices 
-						.price Let's talk!
-						.detail Paid Annually  
-					.plan__list-item--attendee 1000+ Attendee Room
-					a(href="#").btnc.btnc-cir.plan__list-item--get Contact us
+	header.navbar 
+		.navbar__search
+			form(action="#").input-group.mb-3
+				.input-group-append
+					button.btn(type="submit") 
+						i.fas.fa-search
+				input.form-control(type="text", placeholder="What do you want to learn", aria-label="What do you want to learn", aria-describedby="search")
+		a(href="/").logo Learn.
+		.navbar__menu 
+			a(href="#").navbar__menu-item Browse 
+				i.fas.fa-chevron-down
+			a(href="#").navbar__menu-item Sign in
+			a(href="#").btnc Join For Free
+	section.banner 
+		.banner__text 
+			.banner__text-title World-class learning for anyone, anywhere 
+			.banner__text-desc Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum explicabo maiores, est tenetur facere nam odio ratione tempore velit suscipit.
+			a(href="#").btnc Get Started
+		.banner__image 
+			img(src="/images/banner.png", alt="alt")
+	section.courses 
+		.courses__title Explore your program from 123,000 online courses
+		ul.courses__categories
+			li.courses__categories-item.checked All Categories
+			li.courses__categories-item Programming & Tech
+			li.courses__categories-item Lifestyle
+			li.courses__categories-item Business
+			li.courses__categories-item Design 
+		.courses__list 
+			card(link, title, desc, teacher, learner, star, img, type, date)
+			+card("#", "How to hack nasa with programming language HTML!", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam repellat sed, rem sint deleniti architecto, deserunt, esse enim temporibus nobis illum. Officiis eius possimus, vel ratione cupiditate eveniet maiores laborum!","Diu", "156,000", "4.9", "/images/html.jpg", "hell", "Jul 32, 2069" )
+			+card("#", "Full snack overflow in 3 months", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam repellat sed, rem sint deleniti architecto, deserunt, esse enim temporibus nobis illum. Officiis eius possimus, vel ratione cupiditate eveniet maiores laborum!","Khanh", "600,000", "4.9", "/images/fnd.jpg", "hell", "August 5, 2002" )
+			

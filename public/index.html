@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Demio</title>
+    <title>Home</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="robots" content="index, follow">
@@ -16,70 +16,63 @@
   </head>
   <body class="home-page">
     <div class="wrapper">
-      <header class="navbar">
-        <div class="container"> <a class="logo">demio <i class="fab fa-adn"></i></a>
-          <ul class="navbar__menu"> <a class="navbar__menu-item" href="#">Why Demio?<i class="fas fa-chevron-down"></i></a><a class="navbar__menu-item" href="#">Solutions</a><a class="navbar__menu-item" href="#">Customers</a><a class="navbar__menu-item" href="#">Pricing </a><a class="navbar__menu-item" href="#">Recources<i class="fas fa-chevron-down"></i></a></ul>
-          <div class="navbar__enter"><a class="btnc" href="#">Login</a><a class="btnc btnc-rounded btnc-cir" href="#">Get started free</a></div>
-        </div>
+      <header class="navbar"> 
+        <div class="navbar__search">
+          <form class="input-group mb-3" action="#">
+            <div class="input-group-append">
+              <button class="btn" type="submit"> <i class="fas fa-search"></i></button>
+            </div>
+            <input class="form-control" type="text" placeholder="What do you want to learn" aria-label="What do you want to learn" aria-describedby="search">
+          </form>
+        </div><a class="logo" href="/">Learn.</a>
+        <div class="navbar__menu"> <a class="navbar__menu-item" href="#">Browse <i class="fas fa-chevron-down"></i></a><a class="navbar__menu-item" href="#">Sign in</a><a class="btnc" href="#">Join For Free</a></div>
       </header>
-      <section class="banner">
-        <div class="container">
-          <h1 class="banner__title">Flexible pricing plans for <span>any business</span></h1>
-          <h3 class="banner__desc">Select a plan below or start a 14-day free trial to see all that Demio can do for you.</h3>
-          <div class="banner__saver btnc btnc-rounded btnc-cir">
-            <div class="banner__saver-normal btnc">Monthly</div>
-            <div class="banner__saver-annual btnc btnc-cir btnc-filled">Annual  <span>Save 30%</span></div>
-          </div>
+      <section class="banner"> 
+        <div class="banner__text"> 
+          <div class="banner__text-title">World-class learning for anyone, anywhere </div>
+          <div class="banner__text-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum explicabo maiores, est tenetur facere nam odio ratione tempore velit suscipit.</div><a class="btnc" href="#">Get Started</a>
         </div>
+        <div class="banner__image"> <img src="/images/banner.png" alt="alt"></div>
       </section>
-      <section class="plan">
-        <div class="container">
-          <ul class="plan__list"> 
-            <li class="plan__list-item">
-              <div class="plan__list-item--detail"> 
-                <h3 class="title">STARTER</h3>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.</p>
+      <section class="courses"> 
+        <div class="courses__title">Explore your program from 123,000 online courses</div>
+        <ul class="courses__categories">
+          <li class="courses__categories-item checked">All Categories</li>
+          <li class="courses__categories-item">Programming & Tech</li>
+          <li class="courses__categories-item">Lifestyle</li>
+          <li class="courses__categories-item">Business</li>
+          <li class="courses__categories-item">Design </li>
+        </ul>
+        <div class="courses__list"> 
+          <card link title desc teacher learner star img type date></card><a class="cardctn" href="#">
+            <div class="card__image"><img src="/images/html.jpg" alt="alt"/></div>
+            <div class="card__detail"> 
+              <div class="card__detail-type"><i class="fas fa-chart-bar"></i><span>hell</span></div>
+              <div class="card__detail-title">How to hack nasa with programming language HTML!</div>
+              <div class="card__detail-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam repellat sed, rem sint deleniti architecto, deserunt, esse enim temporibus nobis illum. Officiis eius possimus, vel ratione cupiditate eveniet maiores laborum!</div>
+              <div class="card__detail-rate">
+                <div class="card__detail-rate-learner">156,000<span>learners </span></div>
+                <div class="card__detail-rate-star"><i class="far fa-star"></i><span>4.9</span></div>
               </div>
-              <div class="plan__list-item--prices"> 
-                <div class="price">$34/mo</div>
-                <div class="detail">Paid Annually  </div>
+              <div class="card__detail-class"> 
+                <div class="card__detail-class-teacher">Diu</div>
+                <div class="card__detail-class-date">Jul 32, 2069</div>
               </div>
-              <div class="plan__list-item--attendee">50 Attendee Room</div><a class="btnc btnc-cir plan__list-item--get" href="#">Get this plan</a>
-            </li>
-            <li class="plan__list-item">
-              <div class="plan__list-item--detail"> 
-                <h3 class="title">GROWTH</h3>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.</p>
+            </div></a><a class="cardctn" href="#">
+            <div class="card__image"><img src="/images/fnd.jpg" alt="alt"/></div>
+            <div class="card__detail"> 
+              <div class="card__detail-type"><i class="fas fa-chart-bar"></i><span>hell</span></div>
+              <div class="card__detail-title">Full snack overflow in 3 months</div>
+              <div class="card__detail-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, facere? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam repellat sed, rem sint deleniti architecto, deserunt, esse enim temporibus nobis illum. Officiis eius possimus, vel ratione cupiditate eveniet maiores laborum!</div>
+              <div class="card__detail-rate">
+                <div class="card__detail-rate-learner">600,000<span>learners </span></div>
+                <div class="card__detail-rate-star"><i class="far fa-star"></i><span>4.9</span></div>
               </div>
-              <div class="plan__list-item--prices"> 
-                <div class="price">$69/mo</div>
-                <div class="detail">Paid Annually  </div>
+              <div class="card__detail-class"> 
+                <div class="card__detail-class-teacher">Khanh</div>
+                <div class="card__detail-class-date">August 5, 2002</div>
               </div>
-              <div class="plan__list-item--attendee">150 Attendee Room</div><a class="btnc btnc-cir plan__list-item--get" href="#">Get this plan</a>
-            </li>
-            <li class="plan__list-item">
-              <div class="plan__list-item--detail"> 
-                <h3 class="title">BUSINESS</h3>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.</p>
-              </div>
-              <div class="plan__list-item--prices"> 
-                <div class="price">$163/mo</div>
-                <div class="detail">Paid Annually  </div>
-              </div>
-              <div class="plan__list-item--attendee">500 Attendee Room</div><a class="btnc btnc-cir plan__list-item--get" href="#">Get this plan</a>
-            </li>
-            <li class="plan__list-item">
-              <div class="plan__list-item--detail"> 
-                <h3 class="title">ENTERPRISE</h3>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eius ullam dignissimos quos consequuntur vitae id blanditiis autem animi voluptate.</p>
-              </div>
-              <div class="plan__list-item--prices"> 
-                <div class="price">Let's talk!</div>
-                <div class="detail">Paid Annually  </div>
-              </div>
-              <div class="plan__list-item--attendee">1000+ Attendee Room</div><a class="btnc btnc-cir plan__list-item--get" href="#">Contact us</a>
-            </li>
-          </ul>
+            </div></a>
         </div>
       </section>
     </div>
