@@ -1,63 +1,97 @@
 extends layout/layout
 
 block vars
-	-title = 'The Great Sea'
+	-title = 'Home'
 	-bodyClass = 'home-page'
 
+mixin card(img, name, chat, time)
+	a(href="#").cardctn 
+		.card__avt 
+			img(src=img, alt=name)
+		.card__detail 
+			.card__detail-name=name 
+			.card__detail-chat=chat 
+		.card__time=time
+
 block container
-	.container
-		section.login  
-			.container
-				a.login__logo(href="#")
-					i(class="fas fa-book-open")
-					p.login__logo-text The Great Sea
-				.login__detail
-					h1 Login
-					h3 Leave your salling footprints
-					p Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae dolor fuga ut molestias eos ratione molestiae dignissimos nihil perspiciatis rem.
-				.login__form
-					form(action='#' method='method')
-						.form-group.login__form-group
-							label(for='email') Username
-							input.form-control(type='email', name='email' placeholder='duypham05082002@gmail.com' autofocus=true)
-						.form-group.login__form-group
-							label(for='password') Password
-							input.form-control(type='password', name='{:password}', placeholder='Password')
-						.login__form-option
-							.form-check.login__form-option_check
-								input.form-check-input#remember(type="checkbox")
-								label.form-check-label(for="remember") Remember me
-							a(href="#") Forget password?
-						button.btn.btn-primary(type='submit') Login
-				.login__create_account
-					p.login__create_account-text Don't have a account yet?
-					a(href="#") Join The Great Sea 
-			.overlay
-			
-		section.slideShow
-			.container
-				ul.slideShow__list 
-					li.slideShow__list-item
-						.slideShow__list-item-image 
-							img(src="/images/sld1.jpg", alt="alt")
-						.slideShow__list-item-text 
-							h2 Guizhong and Zhongli
-							p Lorem ipsum dolor sit amet consectetur adipisicing.
-					li.slideShow__list-item
-						.slideShow__list-item-image 
-							img(src="/images/sld2.jpg", alt="alt")
-						.slideShow__list-item-text 
-							h2 Ganyu
-							p Lorem ipsum dolor sit amet consectetur adipisicing.
-					li.slideShow__list-item
-						.slideShow__list-item-image 
-							img(src="/images/sld3.jpg", alt="alt")
-						.slideShow__list-item-text 
-							h2 Amber
-							p Lorem ipsum dolor sit amet consectetur adipisicing.
-				ul.slideShow__list-navigation 
-					li.dot(dot="1")
-					li.dot(dot="2")
-					li.dot(dot="3")
-					li.dot(dot="4")
-					li.panel
+	section.slideMenu 
+		.slideMenu__title diuz
+		.slideMenu__list 	
+			a(href="#").slideMenu__list-item  
+				i.far.fa-th-large
+				span Rooms
+			a(href="#").slideMenu__list-item.checked 
+				i.fas.fa-video 
+				span Stage
+			a(href="#").slideMenu__list-item  
+				i.fas.fa-user-friends
+				span Networking
+			a(href="#").slideMenu__list-item  
+				i.fal.fa-calendar
+				span Schedule
+			a(href="#").slideMenu__list-item  
+				i.fas.fa-store
+				span Expo
+			a(href="#").slideMenu__list-item  
+				i.fas.fa-coffee 
+				span Lobby
+			a(href="#").slideMenu__list-item  
+				i.far.fa-bell 
+				span Notificatons
+		.slideMenu__user
+			.slideMenu__user-image 
+				img(src="/images/avt.jpg", alt="")
+			.slideMenu__user-detail
+				.slideMenu__user-detail-name Diu Pham 
+				.slideMenu__user-detail-gmail duypham05082002@gmail.com
+	section.mainScr 
+		.mainScr__header 
+			.mainScr__header-title Prepare for the school day
+			.mainScr__header-time 
+				i.fas.fa-circle 
+				span 00:00
+		.mainScr__liveScr 
+			.mainScr__liveScr-pinScr 
+				img(src="/images/pinScr.jpg", alt="")
+			.mainScr__liveScr-list 
+				.mainScr__liveScr-list-item
+					img(src="/images/scr1.jpg", alt="")
+				.mainScr__liveScr-list-item
+					img(src="/images/scr2.jpg", alt="")
+				.mainScr__liveScr-list-item
+					img(src="/images/scr3.jpg", alt="")
+		.mainScr__menu 
+			.btnc
+				i.far.fa-share-alt
+			.btnc 
+				i.fas.fa-microphone
+			.btnc 
+				i.far.fa-video-slash
+			.btnc.checked 
+				i.far.fa-phone-alt
+			.btnc 
+				i.far.fa-volume-up
+			.btnc 
+				i.fas.fa-expand-alt
+			.btnc 
+				i.fas.fa-ellipsis-h
+	section.friend 
+		.friend__menu 
+			.friend__menu-item.checked Chat 
+			.friend__menu-item Member 
+			.friend__menu-item Polls 
+		.friend__list 
+			+card("/images/avt.jpg", "Diu", "hello", "11:11")
+			+card("/images/avt.jpg", "Jizz", "diuuuuuuuuuuuuuuuuuuuuuu", "12:12")
+			+card("/images/avt.jpg", "Pol", "Mlem mlem", "00:00")
+			+card("/images/avt.jpg", "Daz", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, amet ex! Quibusdam molestias repellat dolorum perferendis facere iste voluptate nobis.", "05:08")
+			+card("/images/avt.jpg", "Khanh", "hello", "20:02")
+			+card("/images/avt.jpg", "Pham", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt excepturi eveniet cum eius aliquam, explicabo dolores facere iure in ratione architecto modi amet dolorem id possimus ducimus doloremque quos officia molestiae corporis at officiis similique soluta. Doloremque, similique, aut eaque delectus autem voluptatem asperiores doloribus sint iste illum natus quisquam?", "12:20")
+		.friend__type 
+			.input-group
+				input.form-control(type="text", placeholder="Recipient\'s username", aria-label="Recipient\'s username", aria-describedby="basic-addon2")
+				.input-group-append
+					button.btn.btn-outline-secondary(type="button")
+						i.fal.fa-paperclip
+					button.btn.btn-outline-secondary(type="button")
+						i.far.fa-paper-plane
