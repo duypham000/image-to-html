@@ -3,11 +3,22 @@ html {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: aceh;
+  src: url("/fonts/Aceh.ttf");
+}
+
 html,
 body,
 .wrapper {
   width: 100%;
   height: 100%;
+  font-family: aceh;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
 }
 
 html,
@@ -23,6 +34,11 @@ body {
 }
 a {
   text-decoration: none;
+  color: currentColor;
+  &:hover {
+    text-decoration: none;
+    color: currentColor;
+  }
 }
 img {
   display: block;

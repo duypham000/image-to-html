@@ -4,5 +4,82 @@ block vars
 	-title = 'Home'
 	-bodyClass = 'home-page'
 
+mixin card(name, img, price, id, link, location)
+	a(href=link).cardctn
+		.card__image 
+			img(src=link, alt=name)
+		.card__title=name 
+		.card__detail
+			.card__detail-info 
+				.card__detail-info-price=price 
+				.card__detail-info-id Booking ID: 
+					span=id 
+				.card__detail-info-location=location
+			.card__detail-logo
+				i.fab.fa-500px
 block container
-	
+	header.navbar 
+		a(href="#").logo Dstudio 
+		ul.navbar__menu 
+			a(href="#").navbar__menu-item Home 
+			a(href="#").navbar__menu-item About 
+			a(href="#").navbar__menu-item Type of house 
+			a(href="#").navbar__menu-item Contact 
+			a(href="#").navbar__menu-item
+				.btnc.btnc--rounded Login 
+	section.banner
+		.banner__slide 
+			h1.banner__slide-title Enjoy Your Dream Vacation 
+			p.banner__slide-desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quod nobis iste?
+			a(href="#").banner__slide-link 
+				i.fab.fa-500px
+				span Warwick Hotels & Resorts 
+			.banner__slide-image 
+				img(src="/images/sld.jpg", alt="Warwich Hotels & Resorts")
+			.cover
+		.banner__feature 
+			.banner__feature-facilities 
+				h3.banner__feature-facilities-title Facilities
+					a(href="#") See More
+				ul.banner__feature-facilities-list
+					li.banner__feature-facilities-list--item 
+						i.fas.fa-swimming-pool
+						span Swimming 
+					li.banner__feature-facilities-list--item 
+						i.fas.fa-wifi
+						span Wi-fi 
+					li.banner__feature-facilities-list--item 
+						i.fas.fa-fan
+						span AC 
+					li.banner__feature-facilities-list--item 
+						i.fas.fa-hamburger
+						span Dinner
+			.banner__feature-foryou 
+				h3.banner__feature-foryou-title Hotels For You 
+				p.banner__feature-foryou-desc 5 Days 6 Nights 
+				a(href="#").banner__feature-foryou-price 
+					i.fas.fa-check-circle
+					span USD $696.69
+			.banner__feature-views 
+				.banner__feature-views-search 
+					.banner__feature-views-search--res 150 Results 
+					.banner__feature-views-search--tool 
+						i.fas.fa-pen
+						i.fas.fa-search
+				ul.banner__feature-views-list 
+					a(href="#").image 
+						img(src="/images/views.jpg", alt="")
+					a(href="#").image 
+						img(src="/images/views.jpg", alt="")
+					a(href="#").image 
+						img(src="/images/views.jpg", alt="")
+					a(href="#").image 
+						img(src="/images/views.jpg", alt="")
+					a(href="#").image 
+						img(src="/images/views.jpg", alt="")
+	section.choice 
+		h2.choice__title Entire city of choice 
+		ul.choice__list 
+			+card("Diu resort", "#", "$69.96", "000001", "/images/sld.jpg", "Diu group")
+			+card("Diu hotel", "#", "$69.96", "000002", "/images/sld.jpg", "Diu group")
+			+card("Diu shop", "#", "$69.96", "000006", "/images/sld.jpg", "Diu group")
